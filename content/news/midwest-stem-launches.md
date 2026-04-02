@@ -14,7 +14,7 @@ We're excited to announce the launch of the Sea Cadets Midwest STEM initiative! 
 
 In the coming months, we'll be rolling out:
 
-- **Regional STEM events** with hands-on training in robotics, cybersecurity, and engineering
+- **Regional STEM events** with hands-on training in a variety of STEM related disciplines
 - **Curriculum resources** to help cadets and instructors prepare
 - **Partnership opportunities** for organizations interested in supporting STEM education
 
