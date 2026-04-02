@@ -1,0 +1,24 @@
+{{ define "main" }}
+
+{{ partial "hero.html" . }}
+{{ partial "breadcrumbs.html" . }}
+
+<article class="page-content">
+  <div class="card__meta" style="margin-bottom: 1.5rem;">
+    {{ dateFormat "January 2, 2006" .Date }}
+    {{ with .Params.author }} &middot; {{ . }}{{ end }}
+  </div>
+
+  {{ .Content }}
+
+  {{ with .Params.tags }}
+  <div style="margin-top: 2rem;">
+    <strong>Tags:</strong>
+    {{ range . }}
+      <a href="{{ "tags/" | relURL }}{{ . | urlize }}/" class="btn btn--navy" style="font-size: 0.75rem; padding: 0.2rem 0.6rem; margin: 0.2rem;">{{ . }}</a>
+    {{ end }}
+  </div>
+  {{ end }}
+</article>
+
+{{ end }}

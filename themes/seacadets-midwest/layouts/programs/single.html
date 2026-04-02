@@ -1,0 +1,14 @@
+{{ define "main" }}
+
+{{ partial "hero.html" . }}
+{{ partial "breadcrumbs.html" . }}
+
+<article class="page-content">
+  {{ with .Params.age_range }}
+  <div class="card__meta" style="margin-bottom: 1rem;">Ages {{ . }}</div>
+  {{ end }}
+
+  {{ .Content }}
+</article>
+
+{{ end }}

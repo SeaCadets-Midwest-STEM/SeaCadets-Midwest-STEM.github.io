@@ -1,0 +1,130 @@
+// ──────────────────────────────────────
+// Header & navigation
+// ──────────────────────────────────────
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: $navy;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $space-sm $space-lg;
+  max-width: $container-max;
+  margin: 0 auto;
+}
+
+.site-header__brand {
+  display: flex;
+  align-items: center;
+  gap: $space-sm;
+  color: $white;
+  text-decoration: none;
+  font-family: $font-heading;
+  font-weight: 800;
+  font-size: $font-size-lg;
+  letter-spacing: 0.02em;
+
+  &:hover, &:focus {
+    color: $gold;
+  }
+
+  img {
+    height: 40px;
+    width: auto;
+  }
+}
+
+// Hamburger toggle
+.nav-toggle {
+  display: block;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: $space-sm;
+
+  @media (min-width: $bp-lg) {
+    display: none;
+  }
+
+  .nav-toggle__bar {
+    display: block;
+    width: 24px;
+    height: 3px;
+    background-color: $white;
+    margin: 4px 0;
+    border-radius: 2px;
+    transition: transform $transition-speed, opacity $transition-speed;
+  }
+
+  &[aria-expanded="true"] {
+    .nav-toggle__bar:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .nav-toggle__bar:nth-child(2) {
+      opacity: 0;
+    }
+
+    .nav-toggle__bar:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+  }
+}
+
+// Navigation list
+.site-nav {
+  display: none;
+
+  &.is-open {
+    display: block;
+  }
+
+  @media (min-width: $bp-lg) {
+    display: flex !important;
+    align-items: center;
+    gap: $space-xs;
+  }
+}
+
+.site-nav__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  @media (max-width: ($bp-lg - 1)) {
+    padding: $space-md $space-lg $space-lg;
+    background-color: $navy;
+  }
+
+  @media (min-width: $bp-lg) {
+    display: flex;
+    align-items: center;
+    gap: $space-xs;
+  }
+}
+
+.site-nav__item a {
+  display: block;
+  color: $white;
+  font-family: $font-heading;
+  font-weight: 600;
+  font-size: $font-size-sm;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: $space-sm $space-md;
+  border-radius: $border-radius;
+  transition: background-color $transition-speed, color $transition-speed;
+
+  &:hover,
+  &:focus,
+  &[aria-current="page"] {
+    background-color: rgba($white, 0.1);
+    color: $gold;
+  }
+}

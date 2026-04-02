@@ -1,0 +1,104 @@
+baseURL = "https://seacadets-midwest-stem.github.io/SeaCadets-Midwest-STEM/"
+languageCode = "en-us"
+title = "Sea Cadets Midwest STEM"
+theme = "seacadets-midwest"
+
+[params]
+  description = "STEM programs and training opportunities for U.S. Naval Sea Cadets in the Midwest region."
+  org_name = "Sea Cadets Midwest STEM"
+  seacadets_url = "https://www.seacadets.org"
+  quarterdeck_info = "Register for trainings through Quarterdeck at https://www.seacadets.org using your training code."
+
+[params.social]
+  facebook = "https://www.facebook.com/usnscc"
+  instagram = "https://www.instagram.com/americaseacadets"
+  youtube = "https://www.youtube.com/@SeaCadetsUS"
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[caches]
+  [caches.images]
+    dir = ":cacheDir/images"
+
+# ──────────────────────────────────────
+# Primary navigation menu
+# ──────────────────────────────────────
+
+[[menus.main]]
+  name = "About"
+  url = "/about/"
+  weight = 10
+
+[[menus.main]]
+  name = "Programs"
+  url = "/programs/"
+  weight = 20
+
+[[menus.main]]
+  name = "Events"
+  url = "/events/"
+  weight = 30
+
+[[menus.main]]
+  name = "Resources"
+  url = "/resources/"
+  weight = 40
+
+[[menus.main]]
+  name = "Gallery"
+  url = "/gallery/"
+  weight = 50
+
+[[menus.main]]
+  name = "News"
+  url = "/news/"
+  weight = 60
+
+[[menus.main]]
+  name = "FAQ"
+  url = "/faq/"
+  weight = 70
+
+[[menus.main]]
+  name = "Contact"
+  url = "/contact/"
+  weight = 80
+
+# ──────────────────────────────────────
+# Footer navigation menu
+# ──────────────────────────────────────
+
+[[menus.footer]]
+  name = "Sea Cadets National"
+  url = "https://www.seacadets.org"
+  weight = 10
+  [menus.footer.params]
+    external = true
+
+[[menus.footer]]
+  name = "What We Do"
+  url = "https://www.seacadets.org/what-we-do/"
+  weight = 20
+  [menus.footer.params]
+    external = true
+
+[[menus.footer]]
+  name = "Join Sea Cadets"
+  url = "https://www.seacadets.org/join/"
+  weight = 30
+  [menus.footer.params]
+    external = true
+
+[[menus.footer]]
+  name = "Donate"
+  url = "https://www.seacadets.org/donate-now/"
+  weight = 40
+  [menus.footer.params]
+    external = true

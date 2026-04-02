@@ -1,0 +1,48 @@
+{{ define "main" }}
+
+{{ partial "hero.html" . }}
+{{ partial "breadcrumbs.html" . }}
+
+<article class="page-content">
+
+  {{/* Event meta block */}}
+  <div class="event-meta">
+    {{ with .Params.event_date }}
+    <div class="event-meta__item">
+      <strong>Date</strong>
+      <span>
+        <time>{{ dateFormat "January 2, 2006" . }}</time>
+        {{ with $.Params.event_end_date }} &ndash; <time>{{ dateFormat "January 2, 2006" . }}</time>{{ end }}
+      </span>
+    </div>
+    {{ end }}
+
+    {{ with .Params.location }}
+    <div class="event-meta__item">
+      <strong>Location</strong>
+      <span>{{ . }}</span>
+    </div>
+    {{ end }}
+
+    {{ with .Params.status }}
+    <div class="event-meta__item">
+      <strong>Status</strong>
+      <span>{{ . | humanize | title }}</span>
+    </div>
+    {{ end }}
+  </div>
+
+  {{/* Training code callout */}}
+  {{ with .Params.training_code }}
+  <div class="training-code-callout">
+    <div class="training-code-callout__code">Training Code: {{ . }}</div>
+    <p class="training-code-callout__instructions">
+      To register for this training, log in to <strong>Quarterdeck</strong> and search for training code <strong>{{ . }}</strong>. Follow the standard Quarterdeck registration process to complete your sign-up.
+    </p>
+  </div>
+  {{ end }}
+
+  {{ .Content }}
+</article>
+
+{{ end }}

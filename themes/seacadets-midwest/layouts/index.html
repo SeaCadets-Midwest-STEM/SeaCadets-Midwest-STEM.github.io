@@ -1,0 +1,90 @@
+{{ define "main" }}
+
+{{/* Homepage hero */}}
+{{ partial "hero.html" . }}
+
+{{/* Intro content from _index.md */}}
+{{ with .Content }}
+<div class="section">
+  <div class="container">
+    {{ . }}
+  </div>
+</div>
+{{ end }}
+
+{{/* Featured Programs */}}
+{{ $programs := where (where .Site.RegularPages "Section" "programs") ".Params.featured" true }}
+{{ if $programs }}
+<div class="section section--alt">
+  <div class="container">
+    <h2>STEM Programs</h2>
+    <div class="card-grid">
+      {{ range $programs }}
+      <article class="card">
+        {{ with .Params.hero_image }}
+        <img class="card__image" src="{{ . | relURL }}" alt="{{ $.Title }}">
+        {{ end }}
+        <div class="card__body">
+          <h3 class="card__title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+          {{ with .Params.age_range }}<div class="card__meta">Ages {{ . }}</div>{{ end }}
+          <p class="card__excerpt">{{ .Summary }}</p>
+          <div class="card__footer">
+            <a href="{{ .Permalink }}" class="btn btn--navy">Learn More</a>
+          </div>
+        </div>
+      </article>
+      {{ end }}
+    </div>
+    <p style="margin-top: 1.5rem; text-align: center;">
+      <a href="{{ "programs/" | relURL }}" class="btn btn--primary">View All Programs</a>
+    </p>
+  </div>
+</div>
+{{ end }}
+
+{{/* Upcoming Events */}}
+{{ $events := first 3 (where (where .Site.RegularPages "Section" "events") ".Params.status" "upcoming") }}
+{{ if $events }}
+<div class="section">
+  <div class="container">
+    <h2>Upcoming Events</h2>
+    <div class="card-grid">
+      {{ range $events }}
+        {{ partial "event-card.html" . }}
+      {{ end }}
+    </div>
+    <p style="margin-top: 1.5rem; text-align: center;">
+      <a href="{{ "events/" | relURL }}" class="btn btn--primary">View All Events</a>
+    </p>
+  </div>
+</div>
+{{ end }}
+
+{{/* Latest News */}}
+{{ $news := first 3 (where .Site.RegularPages "Section" "news") }}
+{{ if $news }}
+<div class="section section--alt">
+  <div class="container">
+    <h2>Latest News</h2>
+    <div class="card-grid">
+      {{ range $news }}
+      <article class="card">
+        <div class="card__body">
+          <h3 class="card__title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+          <div class="card__meta">{{ dateFormat "January 2, 2006" .Date }}</div>
+          <p class="card__excerpt">{{ .Summary }}</p>
+          <div class="card__footer">
+            <a href="{{ .Permalink }}" class="btn btn--navy">Read More</a>
+          </div>
+        </div>
+      </article>
+      {{ end }}
+    </div>
+    <p style="margin-top: 1.5rem; text-align: center;">
+      <a href="{{ "news/" | relURL }}" class="btn btn--primary">All News</a>
+    </p>
+  </div>
+</div>
+{{ end }}
+
+{{ end }}

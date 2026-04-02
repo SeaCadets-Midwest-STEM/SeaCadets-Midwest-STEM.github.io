@@ -1,0 +1,22 @@
+{{/* Event card partial — used in event listings */}}
+<article class="card">
+  {{ with .Params.hero_image }}
+  <img class="card__image" src="{{ . | relURL }}" alt="{{ $.Title }}">
+  {{ end }}
+  <div class="card__body">
+    <h3 class="card__title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+    <div class="card__meta">
+      {{ with .Params.event_date }}
+        <time>{{ dateFormat "January 2, 2006" . }}</time>
+      {{ end }}
+      {{ with .Params.location }} &middot; {{ . }}{{ end }}
+    </div>
+    {{ with .Params.training_code }}
+    <span class="card__training-code">{{ . }}</span>
+    {{ end }}
+    <p class="card__excerpt">{{ .Summary }}</p>
+    <div class="card__footer">
+      <a href="{{ .Permalink }}" class="btn btn--navy">Details</a>
+    </div>
+  </div>
+</article>

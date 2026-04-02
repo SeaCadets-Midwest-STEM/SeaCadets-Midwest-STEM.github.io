@@ -1,0 +1,32 @@
+{{ define "main" }}
+
+{{ partial "hero.html" . }}
+{{ partial "breadcrumbs.html" . }}
+
+<div class="section">
+  <div class="container">
+    {{ .Content }}
+
+    {{ if .Pages }}
+    <div class="card-grid">
+      {{ range .Pages.ByDate.Reverse }}
+      <article class="card">
+        <div class="card__body">
+          <h3 class="card__title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+          <div class="card__meta">
+            {{ dateFormat "January 2, 2006" .Date }}
+            {{ with .Params.author }} &middot; {{ . }}{{ end }}
+          </div>
+          <p class="card__excerpt">{{ .Summary }}</p>
+          <div class="card__footer">
+            <a href="{{ .Permalink }}" class="btn btn--navy">Read More</a>
+          </div>
+        </div>
+      </article>
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+</div>
+
+{{ end }}

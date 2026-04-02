@@ -1,0 +1,33 @@
+{{ define "main" }}
+
+{{ partial "hero.html" . }}
+{{ partial "breadcrumbs.html" . }}
+
+<div class="section">
+  <div class="container">
+    {{ .Content }}
+
+    {{ $upcoming := where .Pages ".Params.status" "upcoming" }}
+    {{ $past := where .Pages ".Params.status" "past" }}
+
+    {{ if $upcoming }}
+    <h2>Upcoming Events</h2>
+    <div class="card-grid">
+      {{ range $upcoming.ByParam "event_date" }}
+        {{ partial "event-card.html" . }}
+      {{ end }}
+    </div>
+    {{ end }}
+
+    {{ if $past }}
+    <h2 style="margin-top: 3rem;">Past Events</h2>
+    <div class="card-grid">
+      {{ range $past.ByParam "event_date" }}
+        {{ partial "event-card.html" . }}
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+</div>
+
+{{ end }}

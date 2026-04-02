@@ -1,0 +1,6 @@
+name = "seacadets-midwest"
+license = "MIT"
+description = "Custom theme for Sea Cadets Midwest STEM, matching seacadets.org visual identity."
+
+[author]
+  name = "Sea Cadets Midwest STEM"

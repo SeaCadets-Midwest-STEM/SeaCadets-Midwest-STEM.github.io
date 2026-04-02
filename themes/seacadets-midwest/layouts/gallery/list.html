@@ -1,0 +1,25 @@
+{{ define "main" }}
+
+{{ partial "hero.html" . }}
+{{ partial "breadcrumbs.html" . }}
+
+<div class="section">
+  <div class="container">
+    {{ .Content }}
+
+    {{ with .Params.images }}
+    <div class="gallery-grid">
+      {{ range . }}
+      <div class="gallery-item">
+        <img src="{{ .src | relURL }}" alt="{{ .alt | default "" }}" loading="lazy">
+        {{ with .caption }}
+        <div class="gallery-item__caption">{{ . }}</div>
+        {{ end }}
+      </div>
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+</div>
+
+{{ end }}

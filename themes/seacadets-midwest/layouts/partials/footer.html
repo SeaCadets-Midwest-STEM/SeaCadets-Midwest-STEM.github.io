@@ -1,0 +1,40 @@
+<footer class="site-footer">
+  <div class="site-footer__mission">
+    <p>The mission of the United States Naval Sea Cadet Corps is to build leaders of character by imbuing in our cadets the highest ideals of honor, respect, commitment, and service.</p>
+  </div>
+
+  <div class="site-footer__main">
+    <div class="site-footer__grid">
+      <div class="site-footer__about">
+        <h3>{{ .Site.Params.org_name | default .Site.Title }}</h3>
+        <p>{{ .Site.Params.description }}</p>
+        <div class="site-footer__social">
+          {{ with .Site.Params.social.facebook }}<a href="{{ . }}" target="_blank" rel="noopener noreferrer" aria-label="Facebook">FB</a>{{ end }}
+          {{ with .Site.Params.social.instagram }}<a href="{{ . }}" target="_blank" rel="noopener noreferrer" aria-label="Instagram">IG</a>{{ end }}
+          {{ with .Site.Params.social.youtube }}<a href="{{ . }}" target="_blank" rel="noopener noreferrer" aria-label="YouTube">YT</a>{{ end }}
+        </div>
+      </div>
+
+      <div class="site-footer__links">
+        <h3>Quick Links</h3>
+        <ul>
+          {{- range .Site.Menus.footer }}
+          <li>
+            <a href="{{ .URL }}"{{ if .Params.external }} target="_blank" rel="noopener noreferrer"{{ end }}>{{ .Name }}</a>
+          </li>
+          {{- end }}
+        </ul>
+      </div>
+
+      <div class="site-footer__contact">
+        <h3>Contact</h3>
+        <p>Have questions about Midwest STEM programs?</p>
+        <p><a href="{{ "contact/" | relURL }}">Get in touch</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="site-footer__bottom">
+    <p>&copy; {{ now.Year }} {{ .Site.Params.org_name | default .Site.Title }}. Associated with the <a href="{{ .Site.Params.seacadets_url }}" target="_blank" rel="noopener noreferrer">U.S. Naval Sea Cadet Corps</a>.</p>
+  </div>
+</footer>

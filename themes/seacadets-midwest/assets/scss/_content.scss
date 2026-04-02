@@ -1,0 +1,173 @@
+// ──────────────────────────────────────
+// Content page styles
+// ──────────────────────────────────────
+
+// Single-page content area
+.page-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: $space-3xl $space-lg;
+
+  h2 {
+    margin-top: $space-2xl;
+  }
+
+  h3 {
+    margin-top: $space-xl;
+  }
+
+  blockquote {
+    border-left: 4px solid $gold;
+    padding-left: $space-lg;
+    margin: $space-xl 0;
+    color: $dark-gray;
+    font-style: italic;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: $space-xl 0;
+
+    th, td {
+      border: 1px solid $gray;
+      padding: $space-sm $space-md;
+      text-align: left;
+    }
+
+    th {
+      background-color: $navy;
+      color: $white;
+      font-family: $font-heading;
+      font-weight: 600;
+    }
+
+    tr:nth-child(even) {
+      background-color: $off-white;
+    }
+  }
+}
+
+// Breadcrumbs
+.breadcrumbs {
+  padding: $space-md $space-lg;
+  font-size: $font-size-sm;
+  color: $dark-gray;
+  max-width: $container-max;
+  margin: 0 auto;
+
+  a {
+    color: $navy-light;
+
+    &:hover, &:focus {
+      color: $gold;
+    }
+  }
+
+  .breadcrumbs__separator {
+    margin: 0 $space-sm;
+    color: $gray;
+  }
+}
+
+// FAQ styles — applied to semantic markdown (h3 = question, following p = answer)
+.faq {
+  h3 {
+    font-family: $font-heading;
+    font-weight: 700;
+    font-size: $font-size-lg;
+    color: $navy;
+    padding-top: $space-lg;
+    margin-bottom: $space-sm;
+    border-bottom: none;
+  }
+
+  // Each h3 + answer group separated by a bottom border
+  h3 ~ p {
+    color: $dark-gray;
+    padding-bottom: $space-lg;
+    border-bottom: 1px solid $gray;
+    margin-bottom: 0;
+  }
+
+  // The last answer shouldn't have a border
+  > :last-child {
+    border-bottom: none;
+  }
+}
+
+// Legacy .faq-item class support (if used)
+.faq-item {
+  border-bottom: 1px solid $gray;
+  padding: $space-lg 0;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.faq-item__question {
+  font-family: $font-heading;
+  font-weight: 700;
+  font-size: $font-size-lg;
+  color: $navy;
+  margin-bottom: $space-sm;
+}
+
+.faq-item__answer {
+  color: $dark-gray;
+}
+
+// Event detail — training code callout
+.training-code-callout {
+  background-color: $off-white;
+  border-left: 4px solid $gold;
+  padding: $space-lg;
+  margin: $space-xl 0;
+  border-radius: 0 $border-radius $border-radius 0;
+
+  .training-code-callout__code {
+    font-family: $font-heading;
+    font-weight: 800;
+    font-size: $font-size-xl;
+    color: $navy;
+    letter-spacing: 0.05em;
+  }
+
+  .training-code-callout__instructions {
+    font-size: $font-size-sm;
+    color: $dark-gray;
+    margin-top: $space-sm;
+  }
+}
+
+// Event meta block
+.event-meta {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $space-md;
+  margin-bottom: $space-xl;
+  padding: $space-lg;
+  background-color: $off-white;
+  border-radius: $border-radius;
+
+  @media (min-width: $bp-md) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.event-meta__item {
+  strong {
+    display: block;
+    font-family: $font-heading;
+    font-size: $font-size-sm;
+    text-transform: uppercase;
+    color: $navy;
+    letter-spacing: 0.04em;
+    margin-bottom: $space-xs;
+  }
+
+  span {
+    color: $dark-gray;
+  }
+}

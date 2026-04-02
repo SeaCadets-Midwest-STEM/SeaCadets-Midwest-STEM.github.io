@@ -1,0 +1,53 @@
+// ──────────────────────────────────────
+// Photo gallery grid
+// ──────────────────────────────────────
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $space-sm;
+
+  @media (min-width: $bp-sm) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (min-width: $bp-lg) {
+    grid-template-columns: repeat(4, 1fr);
+    gap: $space-md;
+  }
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: $border-radius;
+  aspect-ratio: 1;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform $transition-speed;
+  }
+
+  &:hover img {
+    transform: scale(1.05);
+  }
+}
+
+.gallery-item__caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba($navy, 0.8));
+  color: $white;
+  font-size: $font-size-sm;
+  padding: $space-xl $space-sm $space-sm;
+  opacity: 0;
+  transition: opacity $transition-speed;
+
+  .gallery-item:hover & {
+    opacity: 1;
+  }
+}

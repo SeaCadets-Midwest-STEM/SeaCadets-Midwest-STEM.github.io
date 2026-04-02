@@ -1,0 +1,128 @@
+// ──────────────────────────────────────
+// Footer
+// ──────────────────────────────────────
+
+.site-footer__mission {
+  background-color: $navy;
+  color: $white;
+  text-align: center;
+  padding: $space-xl $space-lg;
+
+  p {
+    font-family: $font-heading;
+    font-size: $font-size-lg;
+    font-style: italic;
+    max-width: 800px;
+    margin: 0 auto;
+    color: $gold-light;
+  }
+}
+
+.site-footer__main {
+  background-color: darken($navy, 5%);
+  color: rgba($white, 0.85);
+  padding: $space-3xl $space-lg $space-xl;
+}
+
+.site-footer__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $space-2xl;
+  max-width: $container-max;
+  margin: 0 auto;
+
+  @media (min-width: $bp-md) {
+    grid-template-columns: 2fr 1fr 1fr;
+  }
+}
+
+.site-footer__about {
+  h3 {
+    color: $white;
+    font-size: $font-size-lg;
+    margin-bottom: $space-md;
+  }
+
+  p {
+    font-size: $font-size-sm;
+    line-height: $line-height-base;
+    color: rgba($white, 0.7);
+  }
+}
+
+.site-footer__links {
+  h3 {
+    color: $white;
+    font-size: $font-size-lg;
+    margin-bottom: $space-md;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    margin-bottom: $space-sm;
+  }
+
+  a {
+    color: rgba($white, 0.7);
+    font-size: $font-size-sm;
+    transition: color $transition-speed;
+
+    &:hover, &:focus {
+      color: $gold;
+    }
+  }
+}
+
+.site-footer__contact {
+  h3 {
+    color: $white;
+    font-size: $font-size-lg;
+    margin-bottom: $space-md;
+  }
+
+  p, a {
+    font-size: $font-size-sm;
+    color: rgba($white, 0.7);
+  }
+
+  a:hover, a:focus {
+    color: $gold;
+  }
+}
+
+.site-footer__social {
+  display: flex;
+  gap: $space-md;
+  margin-top: $space-md;
+
+  a {
+    color: rgba($white, 0.7);
+    font-size: $font-size-xl;
+    transition: color $transition-speed;
+
+    &:hover, &:focus {
+      color: $gold;
+    }
+  }
+}
+
+.site-footer__bottom {
+  background-color: darken($navy, 8%);
+  color: rgba($white, 0.5);
+  text-align: center;
+  padding: $space-md $space-lg;
+  font-size: $font-size-sm;
+
+  a {
+    color: rgba($white, 0.5);
+
+    &:hover, &:focus {
+      color: $gold;
+    }
+  }
+}

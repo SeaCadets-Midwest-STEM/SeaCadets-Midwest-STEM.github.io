@@ -1,0 +1,15 @@
+{{/* Hero banner — configurable via page front matter */}}
+{{/* Params: hero_image, hero_title, hero_subtitle, hero_cta_text, hero_cta_url */}}
+
+{{ $heroClass := "hero" }}
+{{ if .IsHome }}{{ $heroClass = "hero hero--large" }}{{ end }}
+
+<section class="{{ $heroClass }}"{{ with .Params.hero_image }} style="background-image: url('{{ . | relURL }}')"{{ end }}>
+  <div class="hero__content">
+    <h1 class="hero__title">{{ with .Params.hero_title }}{{ . }}{{ else }}{{ .Title }}{{ end }}</h1>
+    {{ with .Params.hero_subtitle }}<p class="hero__subtitle">{{ . }}</p>{{ end }}
+    {{ if .Params.hero_cta_text }}
+      <a href="{{ .Params.hero_cta_url | default "#" | relURL }}" class="btn btn--primary">{{ .Params.hero_cta_text }}</a>
+    {{ end }}
+  </div>
+</section>

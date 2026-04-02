@@ -1,0 +1,67 @@
+// ──────────────────────────────────────
+// Hero banner
+// ──────────────────────────────────────
+
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  background-color: $navy;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-align: center;
+  color: $white;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba($navy, 0.7) 0%,
+      rgba($navy, 0.5) 100%
+    );
+  }
+}
+
+.hero--large {
+  min-height: 500px;
+
+  @media (min-width: $bp-md) {
+    min-height: 600px;
+  }
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  padding: $space-3xl $space-lg;
+}
+
+.hero__title {
+  font-family: $font-heading;
+  font-weight: 800;
+  font-size: $font-size-2xl;
+  color: $white;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: $space-md;
+
+  @media (min-width: $bp-md) {
+    font-size: $font-size-hero;
+  }
+}
+
+.hero__subtitle {
+  font-size: $font-size-lg;
+  color: rgba($white, 0.9);
+  margin-bottom: $space-xl;
+
+  @media (min-width: $bp-md) {
+    font-size: $font-size-xl;
+  }
+}

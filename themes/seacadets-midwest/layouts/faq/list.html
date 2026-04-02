@@ -1,0 +1,10 @@
+{{ define "main" }}
+
+{{ partial "hero.html" . }}
+{{ partial "breadcrumbs.html" . }}
+
+<article class="page-content faq">
+  {{ .Content }}
+</article>
+
+{{ end }}
