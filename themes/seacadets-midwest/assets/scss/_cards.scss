@@ -72,12 +72,11 @@
 .card__excerpt {
   font-size: $font-size-sm;
   color: $dark-gray;
-  flex: 1;
   margin-bottom: $space-md;
 }
 
 .card__footer {
-  margin-top: auto;
+  margin-top: $space-md;
 }
 
 // Event-specific card additions
