@@ -119,6 +119,7 @@
   letter-spacing: 0.04em;
   padding: $space-sm $space-md;
   border-radius: $border-radius;
+  white-space: nowrap;
   transition: background-color $transition-speed, color $transition-speed;
 
   &:hover,

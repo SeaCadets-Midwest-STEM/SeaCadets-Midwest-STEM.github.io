@@ -6,6 +6,7 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: $space-xl;
+  align-items: stretch;
 
   @media (min-width: $bp-sm) {
     grid-template-columns: repeat(2, 1fr);
