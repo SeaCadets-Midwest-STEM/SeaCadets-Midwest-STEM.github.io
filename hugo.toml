@@ -42,6 +42,11 @@ theme = "seacadets-midwest"
   weight = 20
 
 [[menus.main]]
+  name = "Support Us"
+  url = "/donate/"
+  weight = 25
+
+[[menus.main]]
   name = "Events"
   url = "/events/"
   weight = 30
@@ -98,7 +103,5 @@ theme = "seacadets-midwest"
 
 [[menus.footer]]
   name = "Donate"
-  url = "https://www.seacadets.org/donate-now/"
+  url = "/donate/"
   weight = 40
-  [menus.footer.params]
-    external = true

@@ -25,3 +25,11 @@ Aligned with the U.S. Naval Sea Cadet Corps, we believe in:
 ## Get Involved
 
 Whether you're a current Sea Cadet, a prospective volunteer, or an organization interested in supporting STEM education, we'd love to hear from you. Visit our [Contact]({{< ref "/contact" >}}) page to get started.
+
+---
+
+## Support Our Mission
+
+Help us expand access to STEM training for cadets nationwide. Every donation—whether one-time or ongoing—supports equipment, instructor training, and scholarships that directly impact young leaders.
+
+[**Donate Today**](/donate/)

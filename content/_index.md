@@ -11,3 +11,11 @@ hero_cta_url: "/programs/"
 The Sea Cadets Midwest STEM initiative brings hands-on STEM training opportunities to cadets from across the nation. Hosted in Indiana, our programs in robotics, cybersecurity, and engineering help young Americans develop critical skills in a disciplined, team-oriented environment.
 
 Whether you're a cadet looking for your next training opportunity, a volunteer wanting to help shape STEM education, or a partner organization interested in growing STEM capabilities, you've come to the right place.
+
+---
+
+## Help Us Build Tomorrow's Leaders
+
+Your support makes our mission possible. Donations fund equipment, instructor training, scholarships, and program expansion—directly impacting cadets nationwide.
+
+[**Support Our Mission**](/donate/) — Make a one-time or ongoing donation through our secure giving platform.
